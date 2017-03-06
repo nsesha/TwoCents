@@ -18,10 +18,13 @@ class ViewController: UIViewController {
     @IBOutlet weak var numPersonField: UITextField!
     @IBOutlet weak var perPersonLabel1: UILabel!
     @IBOutlet weak var perPersonLabel2: UILabel!
+
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        billField.becomeFirstResponder()
     }
 
     override func didReceiveMemoryWarning() {
@@ -76,7 +79,7 @@ class ViewController: UIViewController {
             perPersonLabel2.isHidden = true
         }
         
-        let symbol = getSymbol(currency: currencies[4])
+        let symbol = getSymbol(currency: currencies[0])
         tipLabel.text = String(format: "\(symbol) %.2f", tip)
         totalLabel.text = String(format: "\(symbol) %.2f", total)
     }
