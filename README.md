@@ -35,9 +35,9 @@ GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
 
-Learn't swift for this pre-work on tutorialpoint
-Learn't debugging on xcode
-Learn't assets and overrides
+* Learn't swift for this pre-work on tutorialpoint
+* Learn't debugging on xcode
+* Learn't assets and overrides
 
 ## License
 
