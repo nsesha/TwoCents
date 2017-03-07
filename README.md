@@ -1,25 +1,56 @@
-# TwoCents
+# Pre-work - TwoCents
 
-TwoCents is a Tip Calculator application for iOS submitted as the [pre-assignment](http://courses.codepath.com/snippets/intro_to_ios/prework) requirement for Codepath.
+TwoCents is a tip calculator application for iOS.
 
-Time spent: 10 hours
+Submitted by: Seshadri Nagaraja
 
-Completed:
+Time spent: 10 hours spent in total
 
-* [x] Required: Tip Calculator functionality for default and custom %age of tip
-* [x] Required: Settings page to change the default tip %age.
-* [x] Optional: Settings page to change the default tip currency.
-* [x] Optional: Specify # of people for tip
-* [x] Optional: Remembering the bill amount across app restarts (if <10mins)
-* [x] Optional: Added application icon
-* [x] Additional: Making sure the keyboard is always visible and the bill amount is always the first responder. 
-      This way the user doesn't have to tap anywhere to use this app. Just launch the app and start typing.
-* [x] Additional: Remember tip %age and currency across reboots
+## User Stories
 
-Notes:
-This app has been testing on iphone 7 simulator
+The following **required** functionality is complete:
 
+* [x] User can enter a bill amount, choose a tip percentage, and see the tip and total values.
+* [x] Settings page to change the default tip percentage.
+
+The following **optional** features are implemented:
+* [ ] UI animations
+* [x] Remembering the bill amount across app restarts (if <10mins)
+* [x] Using locale-specific currency and currency thousands separators.
+* [x] Making sure the keyboard is always visible and the bill amount is always the first responder. This way the user doesn't have to tap anywhere to use this app. Just launch the app and start typing.
+
+The following **additional** features are implemented:
+
+* [x] Few Tweaks to App Icon, Settings Icon
+* [x] Added # of persons and tip per person feature
+* [x] Locale specific currency update on change in settings
+
+## Video Walkthrough 
+
+Here's a walkthrough of implemented user stories:
 
 ![Video Walkthrough](twoCents_animation.gif)
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
+
+## Notes
+
+Learn't swift for this pre-work on tutorialpoint
+Learn't debugging on xcode
+Learn't assets and overrides
+
+## License
+
+    Copyright 2017 nsesha
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
