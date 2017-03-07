@@ -19,16 +19,12 @@ class ViewController: UIViewController {
     @IBOutlet weak var perPersonLabel1: UILabel!
     @IBOutlet weak var perPersonLabel2: UILabel!
 
-    let currencies = ["en_US", "en_JE", "en_EE", "en_INR", "en_CN"]
-    
     override func viewWillAppear(_ animated: Bool) {
         let defaults = UserDefaults.standard
         let defaultTipIndex = defaults.integer(forKey: "default_tip_index")
         tipControl.selectedSegmentIndex = defaultTipIndex
-        
-        let symbol = getSymbol(currency: currencies[SettingsCookie.getDefaultCurrency()])
-        tipLabel.text = String(format: "\(symbol) 0.00")
-        totalLabel.text = String(format: "\(symbol) 0.00")
+
+        calculateTip(self)
     }
     
     override func viewDidLoad() {
@@ -59,6 +55,8 @@ class ViewController: UIViewController {
     }
 
     @IBAction func calculateTip(_ sender: Any) {
+        let currencies = ["en_US", "en_JE", "en_EE", "en_INR", "en_CN"]
+        
         let tipPercentages = [0.18, 0.2, 0.25]
         let bill = Double(billField.text!) ?? 0
         let tipIndex = tipControl.selectedSegmentIndex
