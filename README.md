@@ -11,6 +11,7 @@ Completed:
 * [x] Optional: Settings page to change the default tip currency.
 * [x] Optional: Specify # of people for tip
 * [x] Optional: Remembering the bill amount across app restarts (if <10mins)
+* [x] Optional: Added application icon
 * [x] Additional: Making sure the keyboard is always visible and the bill amount is always the first responder. 
       This way the user doesn't have to tap anywhere to use this app. Just launch the app and start typing.
 * [x] Additional: Remember tip %age and currency across reboots
