@@ -18,11 +18,11 @@ class ViewController: UIViewController {
     @IBOutlet weak var numPersonField: UITextField!
     @IBOutlet weak var perPersonLabel1: UILabel!
     @IBOutlet weak var perPersonLabel2: UILabel!
+    
+    let currencies = ["en_US", "en_JE", "en_EE", "en_INR", "en_CN"]
 
     override func viewWillAppear(_ animated: Bool) {
-        let defaults = UserDefaults.standard
-        let defaultTipIndex = defaults.integer(forKey: "default_tip_index")
-        tipControl.selectedSegmentIndex = defaultTipIndex
+        tipControl.selectedSegmentIndex = SettingsCookie.getDefaultTip()
 
         calculateTip(self)
     }
@@ -30,6 +30,10 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        let symbol = getSymbol(currency: currencies[SettingsCookie.getDefaultCurrency()])
+        tipLabel.text = String(format: "\(symbol) %.2f", SettingsCookie.getSavedTip())
+        billField.text = String(format: "%.2f", SettingsCookie.getSavedBill())
         billField.becomeFirstResponder()
     }
 
@@ -55,8 +59,6 @@ class ViewController: UIViewController {
     }
 
     @IBAction func calculateTip(_ sender: Any) {
-        let currencies = ["en_US", "en_JE", "en_EE", "en_INR", "en_CN"]
-        
         let tipPercentages = [0.18, 0.2, 0.25]
         let bill = Double(billField.text!) ?? 0
         let tipIndex = tipControl.selectedSegmentIndex
@@ -89,6 +91,10 @@ class ViewController: UIViewController {
         let symbol = getSymbol(currency: currencies[SettingsCookie.getDefaultCurrency()])
         tipLabel.text = String(format: "\(symbol) %.2f", tip)
         totalLabel.text = String(format: "\(symbol) %.2f", total)
+        
+        
+        //let billAmount = billField.text!
+        SettingsCookie.setSavedBill(savedBill: bill)
     }
 
     func getSymbol(currency: String) -> String{
