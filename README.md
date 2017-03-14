@@ -4,7 +4,7 @@ TwoCents is a tip calculator application for iOS.
 
 Submitted by: Seshadri Nagaraja
 
-Time spent: 10 hours spent in total
+Time spent: 18 hours spent in total
 
 ## User Stories
 
