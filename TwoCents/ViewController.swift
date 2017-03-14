@@ -31,9 +31,11 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        let symbol = getSymbol(currency: currencies[SettingsCookie.getDefaultCurrency()])
-        tipLabel.text = String(format: "\(symbol) %.2f", SettingsCookie.getSavedTip())
+        //let symbol = getSymbol(currency: currencies[SettingsCookie.getDefaultCurrency()])
+        tipControl.selectedSegmentIndex = SettingsCookie.getSavedTip()
+        //tipLabel.text = String(format: "\(symbol) %.2f", SettingsCookie.getSavedTip())
         billField.text = String(format: "%.2f", SettingsCookie.getSavedBill())
+        
         billField.becomeFirstResponder()
     }
 
@@ -95,6 +97,7 @@ class ViewController: UIViewController {
         
         //let billAmount = billField.text!
         SettingsCookie.setSavedBill(savedBill: bill)
+        SettingsCookie.setSavedTip(tipIndex: tipIndex)
     }
 
     func getSymbol(currency: String) -> String{
